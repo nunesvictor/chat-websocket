@@ -3,7 +3,7 @@ const app = express();
 
 // HTTP server config
 const http = require("http").Server(app);
-const PORT = 8000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.get("/", (_, res) => res.sendFile(`${__dirname}/index.html`));
